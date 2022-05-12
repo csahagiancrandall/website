@@ -1,3 +1,4 @@
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,900"); */
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
 * {
     margin: 0;
@@ -17,11 +18,13 @@
     --spacex-blue: #005288;
     --spacex-grey: #A7A9AC;
     --black: #000;
+    --grey: #A7A9AC;
 }
 body {
-    background: #fdfdfd;
+    background: var(--masa-beige);
     font-family: "Nunito", sans-serif;
     font-size: 1rem;
+
 }
 main {
     max-width: 900px;
@@ -43,17 +46,23 @@ ul {
     list-style: none;
     display: flex;
 }
-h1 {
-    color: #e74c3c;
-    margin-bottom: .5rem;
-    transition: 200ms;
-}
-h1:hover {
-    transform: scale(1.05) translate(2%, 0%);
-}
 a {
     text-decoration: none;
     color: inherit
+}
+h1 {
+    display: flex;
+}
+.title {
+    margin-bottom: .5rem;
+    transition: 200ms;
+    /* color: linear-gradient(117deg, var(--tsm-red) 0%, var(--tsm-yellow) 52%, var(--michigan-blue) 52%); */
+    color: #fff;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+}
+.title:hover {
+    transform: scale(1.05) translate(2%, 0%);
 }
 .li {
     margin-right: 1rem;
@@ -68,31 +77,37 @@ a {
     margin: auto;
     padding: 1rem 0;
 }
-.container--grid {
+.container--grid-2 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
     grid-gap: 1rem;
-    padding: 1rem 0;
+    padding: 2rem 0;
 }
+.container--grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+        grid-gap: 3.5rem 1.5rem;
+        padding: 2rem 0;
+    }
 .card {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 15rem;
-    height: 17rem;
+    width: 100%;
+    height: 105%;
     background: #fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     border-radius: 10px;
     margin: auto;
     overflow: hidden;
-    transition: 500ms;
+    transition: 400ms;
   }
 .card:hover {
     transform: scale(1.05);
 }
   .card--avatar-masa {
-    height: 10rem;
-    width: 15rem;
+    height: 12rem;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,6 +115,208 @@ a {
     object-fit: cover;
     background: linear-gradient(117deg, var(--tsm-red) 0%, var(--tsm-yellow) 52%, var(--michigan-blue) 52%);
   }
+  .card--avatar-ng {
+    height: 12rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    object-fit: cover;
+    background: var(--black);
+  }
+  .card--avatar-spacex {
+    height: 12rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    object-fit: cover;
+    background: var(--white-theme);
+  }
+  .card--title {
+    color: #222;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: .5rem;
+    height: 3rem;
+    background: #fff;
+    text-align:center
+  }
+  .card--link {
+    text-decoration: none;
+    /* background: #db4938; */
+    color: #fff;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    transition: 500ms;
+  }
+  .card--link:hover {
+    transform: scale(1.10);
+  }
+.img--align-right-link {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    float: right;
+    margin: 0 16px 10px;
+    transition: 500ms;
+}
+.img--align-right-link:hover {
+    transform: scale(1.05);
+}
+.img--align-right {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    float: right;
+    margin: 0 16px 10px;
+}
+.img--align-left-link {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    float: left;
+    margin: 0 16px 10px;
+    transition: 500ms;
+}
+.img--align-left-link:hover {
+    transform: scale(1.05);
+}
+.img--align-left {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    float: left;
+    margin: 0 16px 10px;
+}
+.img--align-center-link {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    float: center;
+    margin: 0 16px 10px;
+    transition: 500ms;
+}
+.img--align-center-link:hover {
+    transform: scale(1.05);
+}
+.img--align-center-link-transparent {
+    float: center;
+    margin: 0 16px 10px;
+    transition: 500ms;
+}
+.img--align-center-link-transparent:hover {
+    transform: scale(1.05);
+}
+/* MASA Leadership Styles */
+.card-masa-projects {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 17rem;
+    background: var(--grey);
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
+    /* border-radius: 10px; */
+    margin: auto;
+    overflow: hidden;
+    transition: 500ms;
+    transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s, opacity ease 0.3s;
+  }
+.card-masa-projects:hover {
+    transform: scale(1);
+    opacity: 1;
+}
+/* Theo's stuff */
+.portfolio-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.portfolio-img {
+    width: 80%;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 3px;
+    right: -40%;
+    top: 7.5%;
+    transition: 0.3s ease right, 0.3s ease left, 0.3s ease bottom;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    max-height: 85%;
+}
+/* .portfolio-background {
+    position: relative;
+} */
+.portfolio-item{
+    position: relative;
+    background: white;
+    margin: 5px;
+    flex-basis: 300px;
+    padding: 15px 10px;
+    flex-grow: 1;
+    cursor: pointer;
+    height: 250px;
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform 0.2s ease;    
+    max-width: 45%;
+    border-radius: 5px;
+}
+.portfolio-background {
+    height: 100%;
+    width: 100%;
+    /* filter: grayscale(0.95); */
+    position: absolute;
+    z-index: 0;
+    top:0; left:0;
+    transition: transform 0.3s ease;
+    transform: scale(1,1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+.portfolio-background:hover {
+    filter: grayscale(0);
+    transform: scale(1.05);
+}
+.portfolio-background:hover .portfolio-title {
+    transform: scale(0);
+}
+.portfolio-background:hover .portfolio-preview {
+    transform: scale(.95);
+}
+.portfolio-title {
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--masa-beige);
+    opacity: 1;
+    transition: 200ms ;
+    margin: 5% 5% 0% 5%;
+    z-index: 2;
+    position: relative;
+}
+.portfolio-preview {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.3rem 1rem;
+    margin-top: 10%;
+    margin-left: 35%;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    transition: 500ms;
+    transform: scale(0);  
+}
+  /* .card--text {
+    height: 10rem;
+    width: 15rem;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    overflow: hidden;
+    object-fit: cover;
+    /* background: linear-gradient(117deg, var(--tsm-red) 0%, var(--tsm-yellow) 52%, var(--michigan-blue) 52%); */
+  /* }
   .card--avatar-ng {
     height: 10rem;
     width: 15rem;
@@ -119,35 +336,26 @@ a {
     overflow: hidden;
     object-fit: cover;
     background: var(--white-theme);
-  }
-  .card--title {
+  } */ 
+  .card--title-masa-projects {
     color: #222;
     font-weight: 700;
     text-transform: capitalize;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     height: 3rem;
-    background: #fff;
-    text-align:center
+    /* background: #fff; */
+    text-align:left
   }
-  .card--link {
+  .card--link-masa-projects {
     text-decoration: none;
-    background: #db4938;
-    color: #fff;
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
+    /* background: #db4938; */
+    color: #222;
+    /* padding: 0.3rem 1rem .3rem 0rem;
+    border-radius: 20px; */
     transition: 500ms;
   }
-  .card--link:hover {
+  .card--link-masa-projects:hover {
     transform: scale(1.10);
   }
-.img--align-right {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 50%;
-    float: right;
-    margin: 0 16px 16px;
-    transition: 500ms;
-}
-.img--align-right:hover {
-    transform: scale(1.05);
-}
