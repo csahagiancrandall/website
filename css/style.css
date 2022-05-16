@@ -45,6 +45,7 @@ nav {
 ul {
     list-style: none;
     display: flex;
+    font-size: large;
 }
 a {
     text-decoration: none;
@@ -52,6 +53,9 @@ a {
 }
 h1 {
     display: flex;
+}
+figure {
+    margin: 0 .5rem 0 .5rem;
 }
 .title {
     margin-bottom: .5rem;
@@ -86,7 +90,7 @@ h1 {
 .container--grid-3 {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-        grid-gap: 3.5rem 1.5rem;
+        grid-gap: 3rem 1.5rem;
         padding: 2rem 0;
     }
 .card {
@@ -95,17 +99,17 @@ h1 {
     flex-direction: column;
     width: 100%;
     height: 105%;
-    background: #fff;
+    background: var(--white-theme);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     border-radius: 10px;
     margin: auto;
     overflow: hidden;
-    transition: 400ms;
+    transition: 200ms;
   }
 .card:hover {
     transform: scale(1.05);
 }
-  .card--avatar-masa {
+.card--avatar {
     height: 12rem;
     width: 100%;
     display: flex;
@@ -115,24 +119,13 @@ h1 {
     object-fit: cover;
     background: linear-gradient(117deg, var(--tsm-red) 0%, var(--tsm-yellow) 52%, var(--michigan-blue) 52%);
   }
-  .card--avatar-ng {
-    height: 12rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    object-fit: cover;
+  .card--avatar.masa {
+    background: linear-gradient(117deg, var(--tsm-red) 0%, var(--tsm-yellow) 52%, var(--michigan-blue) 52%);
+  }
+  .card--avatar.ng {
     background: var(--black);
   }
-  .card--avatar-spacex {
-    height: 12rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    object-fit: cover;
+  .card--avatar.spacex {
     background: var(--white-theme);
   }
   .card--title {

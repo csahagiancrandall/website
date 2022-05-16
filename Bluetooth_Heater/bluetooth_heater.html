@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <!-- ios support -->
+        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+        <meta name="theme-color" content="#db4938" />
+        <title>MASA Leadership</title>
+    </head>
+    <body>
+        <main>
+            <nav>
+                <h1>
+                    <a href="../index.html">
+                        <div class="title">Cameron Sahagian-Crandall</div>
+                    </a>
+                </h1>
+                <ul>
+                    <a class="li" href="../index.html">Home</a>
+                    <a class="li" href="../About/about.html">About</a>
+                    <a class="li" href="https://www.linkedin.com/in/csahagiancrandall/" target="_blank">LinkedIn</a>
+                    <a class="li" href="../Contact/contact.html">Contact</a>
+                </ul>
+            </nav>
+            <h2 style="text-align: center; font-size: 2rem">
+                Hobbies: Arduino Bluetooth Heater
+            </h2>
+            <p>
+                I currently live in a basement in Michigan, so I keep a <a href="https://www.walmart.com/ip/Handy-Heater-the-Plug-In-Personal-Heater-350-watts-As-Seen-on-TV/54245566" target="_blank" style="color: var(--spacex-blue)">small portable heater</a> in my room. I keep the heater on the opposite side of the room from my bed because it's fairly loud while sleeping. At times, the room can get too hot and I have to get out of bed and turn the heater off.
+            </p>
+            <figure style="float: right; width: 30%">
+                <img class=scaled src="../images/heater_internals.jpg" align="right" alt="St. Tropez" width="100%">
+                <figcaption style="text-align: right">Internals of heater with internal ground wire visible</figcaption>
+            </figure>
+            <p>
+                This is really annoying, so I wanted to see if there was a way to use an arduino, a relay, and an HC-06 bluetooth module to fix the issue.
+            </p>
+            <p> 
+                I started by taking apart the heater to see if it would be possible to add a relay in series with the power supply to the heater. There were two clip-on wires connected to the on-off switch, so I decided I would add the relay in series  before the on-off switch. The relay comes with three terminals: normally open, common, and normally closed. I used the common and normally closed terminals so that when the relay wasn't being powered (ie if the arduino was off) I would still be able to operate heater like normal.
+            </p>
+            <figure style="float: left; width: 30%; overflow: hidden;">
+                <img class=scaled src="../images/bluetooth_heater.JPG" align="left" alt="St. Tropez" width="130%">
+                <figcaption style="text-align: left">Relay mounted to outside of heater</figcaption>
+            </figure>
+            <p>
+                I then soldered the relay in-series, and poked two holes in the heater so that the relay could be mounted to the outside of the heater. 
+            </p>
+            <p>
+                Next, I attempted to get the HC-06 working. The HC-06 is a bluetooth module that can receive messages from a bluetooth master device, such as a phone or computer, and relay those signals through a wired connection to a device like an arduino. In this case, my laptop is sending wireless serial communications through a UART to the HC-06, which then sends that communication directly to the Rx pin of the arduino. However, I'm using the SoftwareSerial arduino library, so arduino is using its processor, instead of UART, to control the serial interface. This is called bit-banging. If the arduino is programmed to send any data back to my computer, it will send that through its Tx pin to the HC-06, which wirelessly relays that same signal to my laptop. The HC-06 is different from an HC-05 in that the HC-06 can only act as a slave, meaning is can't connect to other bluetooth modules if it wanted to. The HC-05 can act as a slave and a master, meaning it could connect to an HC-06 or another HC-05 in slave mode.
+            </p>
+            <figure style="float: right; width: 40%">
+                <img class=scaled src="../images/HC-06_arduino_connects_transparent.png" align="right" alt="St. Tropez" width="100%">
+                <figcaption style="text-align: right"></figcaption>
+            </figure>
+            <p>
+                I found helpful tutorials online that show how to connect an HC-06 to a computer (it still took me awhile). Several websites also gave example code for both the arduino IDE and the arduino processing IDE. The arduino processing IDE is needed to build the GUI to interface with the bluetooth module and to send data through the port on the laptop where the HC-06 is paired.
+            </p>
+            <p>
+                Connecting the HC-06 to the computer was tricky; I found the instructions <a href="https://www.aranacorp.com/en/arduino-and-bluetooth-module-hc-06/" target="_blank" style="color: var(--spacex-blue)" >here</a> to be most helpful. A side note is that the LED on the HC-06 will not turn solid until there is a connection established on the COM port that the HC-06 is connected to, meaning you have to run the processing IDE file that runs the GUI and establishes the connection on the port that the HC-06 is paired to.
+            </p>
+            <p>
+                Before connecting the HC-06, I had to wire it to the arduino. Because the Rx pin of the HC-06 is rated for 3.3V, a voltage regulator has to be built to reduce the voltage of the digital arduino pins from 5V to 3.3V. A diagram of the voltage regulator is shown. Note that any resistance values will work, as long as the ratio between the two resistors stays at 2:1. I only had 220 ohm resistors at the time, so I used two 220 ohm resistors in series in place of the 2k ohm resistor shown in the diagram.
+            </p>
+            <p>
+                I then added the relay into the circuit, with the signal pin of the relay in parallel with pin 13 of the arduino.
+            </p>
+            <figure style="float: right; width: 38%; margin: 0;">
+                <video width="100%" controls>
+                    <source src="../images/heater_working.mp4" type="video/mp4" >
+                </video>
+                <figcaption style="text-align: right"></figcaption>
+            </figure>
+            <figure style="float: left; width: 38%; margin: 0;">
+                <video width="100%" controls>
+                    <source src="../images/heater_working_2.mp4" type="video/mp4" >
+                </video>
+                <figcaption style="text-align: left"></figcaption>
+            </figure>
+            <p style="text-indent: 0px; text-align: center;">
+                Check out the videos here!
+            </p>
+        </main>
+        <script src="../js/jquery.min.js"></script> 
+        <script src="../js/app.js"></script>
+    </body>
+</html>
