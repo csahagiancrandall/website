@@ -1,13 +1,22 @@
 var colors = new Array([62,35,255], [60,255,60], [255,35,98], [45,175,230], [255,205,41], [255,0,255], [255,128,0]);
-var gradientTimer, timer, step = 0, colorIndices, gradientSpeed = 0.02, deg, gradTextSupp, menuScroll, homeopen = true;
+var gradientTimer, timer, step = 0, colorIndices, gradientSpeed = .02, deg, gradTextSupp, menuScroll, homeopen = true;
     
 $(document).ready(function() {
-    setInterval(updateGradient,50)
+    step = parseFloat(localStorage.getItem("step"));
+    if (isNaN(step)) step = 0;
+
+    colorIndices = JSON.parse(localStorage.getItem("colorIndices"));
+    if (localStorage.getItem("colorIndices") == null) colorIndices = [0,1,2,3,4,5,6];
+
+    deg = parseInt(localStorage.getItem("deg"));
+    if (isNaN(deg)) deg = 180;
+
+    gradientTimer = setInterval(updateGradient,350);
 });
   
 function updateGradient(){
     deg = 90;
-    colorIndices = [0,1,2,3,4,5,6];
+    KeyboardEvent;lkj;lkj
     var c0_0 = colors[colorIndices[0]];
     var c0_1 = colors[colorIndices[1]];
     var c1_0 = colors[colorIndices[2]];
@@ -36,4 +45,18 @@ function updateGradient(){
         colorIndices[1] = (colorIndices[1] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
         colorIndices[3] = (colorIndices[3] + Math.floor(1 + Math.random() * (colors.length - 1))) % colors.length;
     }
+    $("body").removeClass("is-loading");
 }
+
+window.onbeforeunload = function(){save()};
+window.addEventListener("beforeunload", function(e){save()}, false);
+
+function save(){
+    clearInterval(gradientTimer); localStorage.setItem("colorIndices",JSON.stringify(colorIndices));
+    localStorage.setItem("step",step);
+    localStorage.setItem("deg",deg);
+}
+
+$('.preload').load(function(){
+   $(this).css('background','none');
+});
