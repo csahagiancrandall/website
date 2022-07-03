@@ -163,7 +163,7 @@ figure {
     color: #fff;
     padding: 0.3rem 1rem;
     border-radius: 20px;
-    transition: 500ms;
+    transition: 200ms;
   }
   .card--link:hover {
     transform: scale(1.10);
@@ -370,3 +370,147 @@ figure {
   .card--link-masa-projects:hover {
     transform: scale(1.10);
   }
+/* FORM CSS */
+form{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+button{
+    font-family: "Nunito", sans-serif;
+    font-size: large;
+    font-weight: 700;
+}
+form .half{
+    width: calc(50% - 10px);
+    padding: 10px;
+}
+.input-wrap{
+    background: #eeeeee;
+    margin: 5px;
+    width: 100%;
+    padding: 10px;
+}
+.input-wrap label{
+    float: left;
+}
+.about-me{
+	margin: 20px 0 50px 0;
+    font-weight: 400;
+}
+.input-wrap input{
+    float: right;
+    width: calc(100% - 30px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 3px !important;
+}
+form .input-wrap i{
+    color: #363636;
+    margin-top: 7px;
+}
+form .button{
+    font-size: 25px;
+    padding: 15px 30px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    background: #eeeeee;
+    margin: 5px;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    overflow: hidden;
+}
+.showcase-button-special:not(.button-round){
+    border-radius: 0px !important;
+}
+.showcase .button, .showcase-button-special{
+  	display: inline-block;
+	padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 18px;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+  	transform: perspective(1px) translateZ(0);
+  	position: relative;
+  	overflow: hidden;
+    color: #363636;
+  	background: #dedede;
+  	-webkit-transition: 0.2s ease all;
+	transition: 0.2s ease all;
+}
+.showcase-button-special:before:not(.button-round){
+    border-radius: 0px !important;
+}
+.showcase .button:before, .showcase-button-special:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    background: #cdcdcd;
+    transform: scale(0);
+	transition: transform 0.2s ease-out;
+}
+
+.showcase .button:hover, .button:focus, .button:active, .showcase-button-special:focus, .showcase-button-special:hover, .showcase-button-special:active{
+  	-webkit-box-shadow: 0px 0px 20px 0px rgba(130,130,130,0.5);
+	-moz-box-shadow: 0px 0px 20px 0px rgba(130,130,130,0.5);
+	box-shadow: 0px 0px 20px 0px rgba(130,130,130,0.5);
+	cursor: pointer;
+    color: white;
+}
+.showcase .button:hover:before, .button:focus:before, .button:active:before, .showcase-button-special:hover:before, .showcase-button-special:focus:before, .showcase-button-special:active:before{
+  	-webkit-transform: scale(2);
+  	transform: scale(2);
+}
+form .button:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    bottom: 0;
+    background: #dedede;
+    transform: scale(0);
+    transition: 0.2s ease-out transform;
+}
+form .button:hover:before, form .button:focus:before, form .button:active:before {
+    transform: scale(2);
+}
+form input[type="text"], form input[type="date"], form input[type="datetime"], form input[type="email"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="time"], form input[type="url"], form textarea, form select, form input[type="password"]{
+    border: none;
+    font-size: 1rem;
+    margin: 5px;
+    font-family: "Nunito", sans-serif;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #eeeeee;
+    color: #363636;
+}
+form:not(#createform) textarea{
+    min-height: 200px;
+    max-height: 300px;
+    width: 100%;
+}
+form select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+form label {
+  display: block;
+  margin-bottom: 8px;
+}
+textarea {
+    width: 100%;
+}
