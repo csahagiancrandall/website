@@ -16,7 +16,6 @@ $(document).ready(function() {
   
 function updateGradient(){
     deg = 90;
-    KeyboardEvent;lkj;lkj
     var c0_0 = colors[colorIndices[0]];
     var c0_1 = colors[colorIndices[1]];
     var c1_0 = colors[colorIndices[2]];
