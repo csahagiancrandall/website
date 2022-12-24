@@ -64,7 +64,7 @@
                 <script>
                     $(document).ready(function(){
                         $.ajax({
-                            url : "http:../images_africa/",
+                            url : "http:../images/",
                             success: function (data) {
                                 $(data).find("a").attr("href", function (i, val) {
                                     if( val.match(/\.(jpe?g|png|gif|JPE?G|PNG|svg)$/) ) { 
