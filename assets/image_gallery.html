@@ -8,6 +8,7 @@
         <!-- ios support -->
         <meta name="apple-mobile-web-app-status-bar" content="#eeeeea" />
         <meta name="theme-color" content="#eeeeea" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <title>Trips: Tanzania and Zanzibar</title>
     </head>
     <body>
@@ -32,6 +33,7 @@
                 June 2022
             </h3>
             <p>
+                <a href="../images_africa/"></a>
                 During the summer of 2022 my mom and I took a trip to Africa. 
                 The trip was 3 weeks long, and consisted of several safaris followed by a 5 day stay on the island state of Zanzibar. 
                 It was all booked off of the <a href="https://thomsonsafaris.com/safari/signature-safari/" target="_blank" style="color: var(--spacex-blue)">Signature Safari</a> from Thomson Safaris, with the added <a href="https://thomsonsafaris.com/safari/signature-safari/" target="_blank" style="color: var(--spacex-blue)">Ruaha, Selous, and Zanzibar extensions</a>.
@@ -62,7 +64,7 @@
                 <script>
                     $(document).ready(function(){
                         $.ajax({
-                            url : "https:../images_africa/",
+                            url : "http:../images_africa/",
                             success: function (data) {
                                 $(data).find("a").attr("href", function (i, val) {
                                     if( val.match(/\.(jpe?g|png|gif|JPE?G|PNG|svg)$/) ) { 
