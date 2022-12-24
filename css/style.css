@@ -533,3 +533,71 @@ form label {
 textarea {
     width: 100%;
 }
+
+/* Test css for image gallery */
+
+#gallery {
+    line-height:0;
+    -webkit-column-count:3; /* split it into 5 columns */
+    -webkit-column-gap:10px; /* give it a 5px gap between columns */
+    -moz-column-count:3;
+    -moz-column-gap:10px;
+    column-count:3;
+    column-gap:10px;
+ }
+
+ #gallery img {
+    width: 100% !important;
+    height: 12rem !important;
+    margin-bottom:10px; /* to match column gap */
+    filter: grayscale(100%);
+    transition: filter .5s, transform .5s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--white-theme);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    /* margin: auto; */
+    overflow: hidden;
+    transition: 200ms;
+    justify-content: center;
+    object-fit: cover;
+ }
+
+ #gallery img:hover {
+    filter:none;
+    transform: scale(1.03);
+ }
+
+ @media (max-width: 1200px) {
+    #gallery {
+     -moz-column-count:    3;
+     -webkit-column-count: 3;
+     column-count:         3;
+    }
+ }
+
+ @media (max-width: 1000px) {
+    #gallery {
+     -moz-column-count:    3;
+     -webkit-column-count: 3;
+     column-count:         3;
+    }
+ }
+
+ @media (max-width: 800px) {
+    #gallery {
+     -moz-column-count:    2;
+     -webkit-column-count: 2;
+     column-count:         2;
+    }
+ }
+
+ @media (max-width: 400px) {
+    #gallery {
+     -moz-column-count:    1;
+     -webkit-column-count: 1;
+     column-count:         1;
+    }
+ }
