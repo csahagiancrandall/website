@@ -139,8 +139,7 @@ figure {
     margin: auto;
     overflow: hidden;
     transition: 200ms;
-    height: 36rem;
-    width: 70%;
+    width: 50%;
     justify-content: center;
     object-fit: cover;
     }
