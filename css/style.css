@@ -138,7 +138,7 @@ figure {
     margin: auto;
     overflow: hidden;
     transition: 200ms;
-    height: 12rem;
+    /* height: 12rem; */
     width: 100%;
     justify-content: center;
     object-fit: cover;
@@ -370,6 +370,33 @@ figure {
   .card--link-masa-projects:hover {
     transform: scale(1.10);
   }
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: var(--font);
+    border-radius: 30px;
+    font-family: 'Libre Bodoni', serif;
+    padding: 0px 5%;
+}
+
+.gallery img {
+    border-radius: 15px;
+    padding: 5px;
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+    font-family: 'Libre Bodoni', serif;
+  }
+
+  .portrait {
+    width: 20%;
+  }
+
+  .landscape {
+    width: 40%;
+  }
+
 /* FORM CSS */
 form{
     display: flex;
