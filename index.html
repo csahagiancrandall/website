@@ -28,27 +28,42 @@
                 </ul>
             </nav>
             <div class="container--grid-3">
-                <a class="card" href="assets/masa.html">
-                    <div class="card--avatar masa">
-                        <img src="images/MASA-Final-Logo-Transparent-Background.svg" height="100%"/>
-                    </div>
-                    <div class="card--title">MASA<br>Leadership</div>
-                    <div class="card--link">Preview</div>
-                </a>
-                <a class="card" href="assets/bluetooth_heater.html">
-                    <div class="card--avatar masa" >
-                        <img src="images/bluetooth_heater_transparent.svg" width="110%" style="margin: 10% 0% 0% 20%"/>
-                    </div>
-                    <div class="card--title">Hobbies:<br>Arduino Bluetooth Heater</div>
-                    <div class="card--link" href="assets/bluetooth_heater.html">Preview</div>
-                </a>
-                <a class="card" href="assets/image_gallery.html">
-                    <div class="card--avatar masa" >
-                        <img src="images_africa/dusty_zebras_crossing_road.JPG" width="200%" style="margin: 0% 0% 5% 0%"/>
-                    </div>
-                    <div class="card--title">Trips:<br>Tanzania and Zanzibar</div>
-                    <div class="card--link" href="assets/image_gallery.html">Preview</div>
-                </a>
+                <div class="card">
+                    <a href="assets/masa.html">
+                        <div class="card--avatar masa">
+                            <img src="images/MASA-Logo-FINAL-transparent.png" height="100%"/>
+                        </div>
+                        <div class="card--title">MASA<br>Leadership</div>
+                    </a>
+                    <button onclick="preview_masa()" style="border: none; background-color: transparent;"><div class="card--link">Preview</div></button>
+                </div>
+                <div class="card">
+                    <a href="assets/bluetooth_heater.html">
+                        <div class="card--avatar masa" >
+                            <img src="images/bluetooth_heater_transparent.svg" width="110%" style="margin: 10% 0% 0% 20%"/>
+                        </div>
+                        <div class="card--title">Hobbies:<br>Arduino Bluetooth Heater</div>
+                    </a>
+                    <button onclick="preview_bluetooth_heater()" style="border: none; background-color: transparent;"><div class="card--link">Preview</div></button>
+                </div>
+                <div class="card">
+                    <a href="assets/image_gallery.html">
+                        <div class="card--avatar masa" >
+                            <img src="images_africa/dusty_zebras_crossing_road.JPG" width="200%" style="margin: 0% 0% 5% 0%"/>
+                        </div>
+                        <div class="card--title">Trips:<br>Tanzania and Zanzibar</div>
+                    </a>
+                    <button onclick="preview_africa()" style="border: none; background-color: transparent;"><div class="card--link">Preview</div></button>
+                </div>
+                <div class="card">
+                    <a href="assets/spacex.html">
+                        <div class="card--avatar spacex">
+                            <img src="images/SpaceX_logo_black.svg" width="100%"/>
+                        </div>
+                        <div class="card--title">Work Experience:<br>SpaceX</div>
+                    </a>
+                    <button onclick="preview_spacex()" style="border: none; background-color: transparent;"><div class="card--link">Preview</div></button>
+                </div>
             </div>
             <h2 style="text-align: center; font-size: 2rem; margin-top: 1rem; margin-bottom: -1rem;">
                 Coming Soon
@@ -61,13 +76,6 @@
                     <div class="card--title">Work Experience:<br>Northrop Grumman</div>
                     <div class="card--link" href="assets/ng.html">Preview</div>
                 </a>
-                <a class="card" href="assets/spacex.html">
-                    <div class="card--avatar spacex">
-                        <img src="images/SpaceX_logo_black.svg" width="100%"/>
-                    </div>
-                    <div class="card--title">Work Experience:<br>SpaceX</div>
-                    <div class="card--link" href="assets/spacex.html">Preview</div>
-                </a>
                 <a class="card" href="assets/lox_tank.html">
                     <div class="card--avatar masa">
                         <img src="images/burst_tank_transparent.png" height="100%"/>
@@ -77,7 +85,7 @@
                 </a>
             </div>
         </main>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/app.js"></script>
     </body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/js.js"></script>
 </html>

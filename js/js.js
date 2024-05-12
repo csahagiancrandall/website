@@ -1,5 +1,7 @@
 var colors = new Array([62,35,255], [60,255,60], [255,35,98], [45,175,230], [255,205,41], [255,0,255], [255,128,0]);
 var gradientTimer, timer, step = 0, colorIndices, gradientSpeed = .02, deg, gradTextSupp, menuScroll, homeopen = true;
+var screenheight = window.screen.height;
+var screenwidth = window.screen.width;
     
 $(document).ready(function() {
     step = parseFloat(localStorage.getItem("step"));
@@ -59,3 +61,20 @@ function save(){
 $('.preload').load(function(){
    $(this).css('background','none');
 });
+
+function preview_masa(){
+    popup = window.open("assets/masa.html", "popup", "location=yes,height=600,width=800,top=0,left=0,scrollbars=yes,status=yes")
+};
+
+function preview_bluetooth_heater(){
+    popup = window.open("assets/bluetooth_heater.html", "popup", "location=yes,height=600,width=800,top=0,left=0,scrollbars=yes,status=yes")
+};
+
+function preview_africa(){
+    popup = window.open("assets/africa.html", "popup", "location=yes,height=600,width=800,top=0,left=0,scrollbars=yes,status=yes")
+};
+
+function preview_spacex(){
+    popup = window.open("assets/spacex.html", "popup", "location=yes,height=600,width=800,top=0,left=0,scrollbars=yes,status=yes")
+};
+
